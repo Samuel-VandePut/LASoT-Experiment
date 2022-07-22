@@ -1,0 +1,5 @@
+{
+    "java.configuration.updateBuildConfiguration": "interactive",
+    "maven.executable.path": "C:\\Program Files\\Apache\\apache-maven-3.6.0\\bin\\mvn",
+    "maven.view": "hierarchical"
+}

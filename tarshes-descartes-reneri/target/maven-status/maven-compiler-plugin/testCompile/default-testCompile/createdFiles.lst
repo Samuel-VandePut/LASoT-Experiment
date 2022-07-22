@@ -1,0 +1,14 @@
+eu\stamp_project\reneri\datastructures\TrieTest.class
+eu\stamp_project\reneri\codeanalysis\EntryPointFinderTest.class
+eu\stamp_project\reneri\testutils\SameSetMatcher.class
+eu\stamp_project\reneri\TestCaseToClassNameTest.class
+eu\stamp_project\reneri\codeanalysis\EntryPointFinderTest$TwoAccessors.class
+eu\stamp_project\reneri\diff\BagOfValuesTest.class
+eu\stamp_project\reneri\InheritanceGraphTest.class
+eu\stamp_project\reneri\datastructures\DirectedGraphTest.class
+eu\stamp_project\reneri\codeanalysis\EntryPointFinderTest$NoAccessor.class
+eu\stamp_project\reneri\codeanalysis\EntryPointFinderTest$DirectAccess.class
+eu\stamp_project\reneri\diff\ObservedValueMapTest.class
+eu\stamp_project\reneri\TestClassFinderTest.class
+eu\stamp_project\reneri\codeanalysis\EntryPointFinderTest$SimpleAccessor.class
+eu\stamp_project\reneri\observations\ObservationTest.class

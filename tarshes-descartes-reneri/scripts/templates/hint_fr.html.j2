@@ -1,0 +1,136 @@
+  <h2><code>{{ mutation|method_link }}</code></h2>
+  <p class="hint issue">
+    Le corps de la méthode
+    <code>{{ mutation|method_link }}</code>
+    a été
+{% if mutation.mutator == 'void' %}
+    supprimé.
+{% else %}
+    remplacé par
+  {% if mutation.mutator == 'empty'%}
+    un <code>return</code> renvoyant une liste vide.
+  {% else %}
+    <code>return {{ mutation.mutator }};</code>.
+  {% endif %}
+{% endif %}
+    Pourtant,
+{% if mutation.tests|length == 1 %}
+    le test <code>{{ mutation.tests[0]|test_case_link }}</code> n'a pas échoué.
+{% else %}
+    aucun des tests suivants n'a échoué&nbsp;:
+    <ul>
+  {% for test in mutation.tests %}
+      <li><code>{{ test|test_case_link }}</code></li>
+  {% endfor %}
+    </ul>
+{% endif %}
+  </p>
+{% if hint.type == 'execution' %}
+  <p class="execution diagnosis">
+    Exécuter les tests avec la méthode modifiée ou avec la méthode originale ne
+    provoque aucune différence observable dans l'état du programme.
+  </p>
+  <p class="suggestion">
+    Ainsi, une solution pourrait être de créer une variante
+  {% if mutation.tests|length == 1 %}
+    du test en question
+  {% else %}
+    des tests listés ci-dessus
+  {% endif %}
+  {% if mutation.is_void %}
+    afin de rendre les effets de bord observables.
+  {% else %}
+    dans laquelle la méthode renverrait une valeur différente.
+  {% endif %}
+  </p>
+{% elif hint.type == 'observation' %}
+  {% set location = hint.location %}
+  <p class="observation diagnosis">
+    Il est possible d'observer une différence dans l'état du programme selon
+    que l'on utilise la méthode originale ou la méthode modifiée.
+    Cette différence se situe dans <code>{{ location|location_link }}</code>
+  {% if location.from.line == location.to.line %}
+    à la ligne {{ location.from.line }}
+  {% else %}
+    aux lignes {{ location.from.line }} à {{ location.to.line }}
+  {% endif %}
+    dans une expression de type <code>{{ location.type }}</code>.
+  {% if not diff %}
+  </p>
+  {% else %}
+    {% set pointcut = diff.pointcut %}
+    En effet, la valeur
+    {% if pointcut.exception %}
+    de l'exception
+    {% else %}
+      {% if pointcut.size %}
+    de la longueur (<code>.size()</code>)
+      {% elif pointcut.length %}
+    de la taille (<code>.length</code>)
+      {% endif %}
+      {% if pointcut.field %}
+    de la variable d'instance <code>{{ pointcut.field }}</code>
+      {% endif %}
+    {% endif %}
+    était {{ diff.expected|describe }} avec la méthode orignale, alors qu'elle
+    vaut {{ diff.observed|describe }} avec la méthode modifiée.
+  </p>
+  <p class="suggestion">
+    {% if pointcut.field and not hint|attr("targets") %}
+    Ainsi, une solution pourrait être d'ajouter une assertion ciblant
+    <code>{{ pointcut.field }}</code>.
+    {% endif %}
+    {% if hint.targets %}
+    Voici la liste des méthodes que vous pourriez appeler pour ce faire&nbsp;:
+    <ul>
+      {% for method in hint.targets %}
+      <li><code>{{ method|trim_package|parse_signature }}</code></li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </p>
+  {% endif %}
+{% elif hint.type == 'infection' %}
+  <p class="infection diagnosis">
+    Il est possible d'observer une différence dans l'état du programme selon
+    que l'on utilise la méthode originale ou la méthode modifiée.
+    Cette différence est observable dans une méthode mais pas dans les tests
+    actuels.
+  {% if diff %}
+    {% set pointcut = diff.pointcut %}
+    En effet, dans un appel de <code>{{ mutation.method }}</code>,
+    {% if pointcut.size %}
+    la taille (<code>.size()</code>) de
+    {% elif pointcut.length %}
+    la longueur (<code>.length</code>) de
+    {% endif %}
+    {% if pointcut.field %}
+    la variable d'instance <code>{{ pointcut.field }}</code> de
+    {% endif %}
+    {% if pointcut.result %}
+    la valeur de retour
+    {% elif pointcut.that %}
+    l'objet sur lequel la méthode est appelée
+    {% else %}
+    l'argument n&deg;{{ pointcut.argument }}
+    {% endif %}
+    était {{ diff.expected|describe }} avec la méthode originale, alors qu'elle
+    vaut {{ diff.observed|describe }} avec la méthode modifiée.
+  {% endif %}
+  </p>
+  <p class="suggestion">
+    Ainsi, une solution pourrait être
+  {% if hint.direct_access %}
+    d'ajouter un test qui cible directement le résultat de
+    <code>{{ mutation.method }}</code>.
+  {% else %}
+    d'ajouter un test qui cible le résultat d'une des méthodes suivantes, car
+    elles appellent indirectement <code>{{ mutation.method }}</code>&nbsp;:
+    <ul>
+    {% for method in hint.targets %}
+      <li>{{ method }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+  </p>
+{% endif %}
