@@ -72,7 +72,9 @@ rem *******Begin Comment**************
 rem Install LASoT extension
 rem *******End Comment**************
 cd /d %~dp0
-call code --install-extension lasot-0.0.1.vsix 
+cd tools
+call code --install-extension lasot-0.0.1.vsix
+cd.. 
 call code --install-extension vscjava.vscode-maven
 
 cd 2048 
