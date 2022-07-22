@@ -1,0 +1,10 @@
+{
+  "mutator": "empty",
+  "class": "Grid",
+  "package": "be.unamur.game2048.models",
+  "method": "getCol",
+  "description": "(I)[Lbe/unamur/game2048/models/Tile;",
+  "tests": [
+    "be.unamur.game2048.Test2048"
+  ]
+}

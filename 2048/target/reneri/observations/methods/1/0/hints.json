@@ -1,0 +1,1 @@
+{"hint-type":"execution","entry-points":[{"method":"moveLeft","desc":"(Z)Z","class":"be.unamur.game2048.controllers.GameController"}]}

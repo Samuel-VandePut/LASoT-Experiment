@@ -1,0 +1,47 @@
+[
+  {
+    "pointcut": "be.unamur.game2048.Test2048|testGetCol()|22|#length",
+    "expected": [
+      {
+        "literalValue": "4",
+        "typeName": "int"
+      }
+    ],
+    "unexpected": [
+      {
+        "literalValue": "0",
+        "typeName": "int"
+      }
+    ]
+  },
+  {
+    "pointcut": "be.unamur.game2048.models.Grid|getCol|(I)[Lbe/unamur/game2048/models/Tile;|0|#result|#length",
+    "expected": [
+      {
+        "literalValue": "4",
+        "typeName": "int"
+      }
+    ],
+    "unexpected": [
+      {
+        "literalValue": "0",
+        "typeName": "int"
+      }
+    ]
+  },
+  {
+    "pointcut": "be.unamur.game2048.Test2048|testGetCol()|21|#length",
+    "expected": [
+      {
+        "literalValue": "4",
+        "typeName": "int"
+      }
+    ],
+    "unexpected": [
+      {
+        "literalValue": "0",
+        "typeName": "int"
+      }
+    ]
+  }
+]

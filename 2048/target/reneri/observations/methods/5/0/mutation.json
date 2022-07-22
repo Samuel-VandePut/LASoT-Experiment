@@ -1,0 +1,10 @@
+{
+  "mutator": "1",
+  "class": "Tile",
+  "package": "be.unamur.game2048.models",
+  "method": "mergeWith",
+  "description": "(Lbe/unamur/game2048/models/Tile;)I",
+  "tests": [
+    "be.unamur.game2048.Test2048"
+  ]
+}
