@@ -10,10 +10,7 @@ if exist jdk-11.0.15.10-hotspot\ (
   goto SP1
 )
 :SP1
-Call :UnZipFile "%cd%" "%cd%\jdk-11.0.15.10-hotspot.zip"
-
-
-rem exit /b
+Call :UnZipFile "%cd%" "%cd%\tools\jdk-11.0.15.10-hotspot.zip"
 
 :UnZipFile <ExtractTo> <newzipfile>
 set vbs="%temp%\_.vbs"
@@ -31,34 +28,34 @@ cscript //nologo %vbs%
 if exist %vbs% del /f /q %vbs%
 
 :SP2
-endlocal
-echo %JAVA_HOME% > JAVA_HOME.txt
-setx JAVA_HOME "%cd%\jdk-11.0.15.10-hotspot" /m
+echo %JAVA_HOME%>javahome.txt
+set JAVA_HOME=%~dp0jdk-11.0.15.10-hotspot
+setx JAVA_HOME "%~dp0jdk-11.0.15.10-hotspot" /m
 
 rem *******Begin Comment**************
 rem Reneri Installation
 rem *******End Comment**************
 
 cd tarshes-descartes-reneri
-start cmd /k mvnw.cmd clean install
+call mvnw.cmd clean install
 
 rem *******Begin Comment**************
 rem 2048 Installation
 rem *******End Comment**************
 cd../2048
-start cmd /k mvnw.cmd clean install
+call mvnw.cmd clean install
 
 
 rem *******Begin Comment**************
 rem Set Path environment for maven wrapper bin folder
 rem *******End Comment**************
+cd /d %~dp0
 echo %PATH% > oldpath.txt
 cd %UserProfile%\.m2\wrapper
 
 :treeProcess
 for %%f in (*.cmd) do (
 	if %%f == mvn.cmd (
-		setx PATH "%PATH:%cd%;=%" /m rem a tester
 		setx PATH "%cd%;%PATH%" /m
 		goto SP3
 	)
@@ -70,13 +67,18 @@ for /D %%d in (*) do (
 )
 
 
+:SP3
 rem *******Begin Comment**************
 rem Install LASoT extension
 rem *******End Comment**************
-code --install-extension lasot-0.0.1.vsix
+cd /d %~dp0
+call code --install-extension lasot-0.0.1.vsix 
+call code --install-extension vscjava.vscode-maven
 
-:SP3
-start cmd /k cd /d %~dp0;cd 2048;code .;cd..
+cd 2048 
+code .
+cd ..
+ 
+pause
 
-
-PAUSE
+exit/b
