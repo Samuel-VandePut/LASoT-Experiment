@@ -20,7 +20,7 @@ In this GitHub repository, you will find in the [tarshes-descartes-reneri direct
 
 With the help off the LASoT plugin and the [usage indications](https://github.com/SamuelVandePut/LASoT) try to improve the tests suite based on the informations incorporated into the code about the survived mutations.
 
-> Tips : When you update the tests suites.  Run them before starting the procedure.
+> Tips : When you've change the tests suite, run it before starting the procedure.
 
 When you have finished execute the uninstall batch file. Then fill in the [Google Form](https://docs.google.com/forms/d/e/1FAIpQLSfq9ZMw2bA00CK0hqz_ESFfbqTh4icy1YlXbLNdMPem2ewW5A/viewform?usp=sf_link).  
 
