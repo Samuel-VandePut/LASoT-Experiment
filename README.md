@@ -19,6 +19,8 @@ In this GitHub repository, you will find in the [tarshes-descartes-reneri direct
 
 With the help off the LASoT plugin and the [usage indications](https://github.com/SamuelVandePut/LASoT) try to improve the tests suite based on the informations incorporated into the code about the survived mutations.
 
+> Tips : When you update the tests suites.  Run them before starting the procedure. 
+
 ## Who is behind this project?
 
 [Samuel Van de Put](https://github.com/SamuelVandePut) master's student, from the University of Namur in Belgium. I was under the supervision of [Xavier Devroey](https://snail.info.unamur.be/author/xavier-devroey/) and [Benoît Vanderose](https://snail.info.unamur.be/author/benoit-vanderose/).
