@@ -10,7 +10,7 @@ In this GitHub repository, you will find in the [tarshes-descartes-reneri direct
 
 ## How to install it?
 - Install Visual Studio Code.
-- Clone this repository.
+- Download this repository.
 - Execute install.bat file with admin rights.
 - Reboot your computer.
 - Execute start.bat file. Visual Studio Code will open with the 2048 project.
