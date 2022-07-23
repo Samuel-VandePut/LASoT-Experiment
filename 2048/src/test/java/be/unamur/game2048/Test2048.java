@@ -79,10 +79,6 @@ public class Test2048 {
                         || controller.moveRight(true) 
                         || controller.moveDown(true) 
                         || controller.moveLeft(true));
-        /*Assert.assertFalse(controller.moveUp(true));
-        Assert.assertFalse(controller.moveRight(true));
-        Assert.assertFalse(controller.moveDown(true));
-        Assert.assertFalse(controller.moveLeft(true));*/
     }
     
     @Test
@@ -90,7 +86,7 @@ public class Test2048 {
         // --- Initialize full grid 
         Tile[][] tiles = {{new Tile(2),new Tile(4),new Tile(8),new Tile(16)},
                           {new Tile(32),new Tile(64),new Tile(64),new Tile(256)},
-                          {new Tile(4),new Tile(4),new Tile(128),new Tile(16)},
+                          {new Tile(2),new Tile(4),new Tile(8),new Tile(16)},
                           {new Tile(32),new Tile(64),new Tile(128),new Tile(256)}};
         GameController controller = new GameController();
         
@@ -143,17 +139,13 @@ public class Test2048 {
     }
 
     @Test 
-    public void testMergeWith() {
-        // --- Initialize tiles
+    public void testMergeWithResult() {
         Tile tile1 = new Tile(2);
         Tile tile2 = new Tile(2);
 
-        // --- Act
         int result = tile1.mergeWith(tile2);
 
-        // --- Assert
-        //Assert.assertEquals(tile1.getValue(), result);
-        Assert.assertTrue(result > 0);
+        Assert.assertEquals(tile1.getValue(), result);
     }
 
     @Test 
@@ -162,10 +154,8 @@ public class Test2048 {
         Tile tile2 = new Tile(4);
 
         int result = tile1.mergeWith(tile2);
-        
-        // --- Assert
-        //Assert.assertEquals(-1, result);
-        Assert.assertTrue(result != 0);
+
+        Assert.assertEquals(-1, result);
     }
 
     /* TEST GRID */
@@ -184,7 +174,9 @@ public class Test2048 {
         Tile t = grid.getTile(7);
 
         // --- Assert
-        Assert.assertEquals(tile,t);
+        // Test without notnull 
+        //Assert.assertNotNull(tile);
+        Assert.assertEquals(tile, t);
     }
 
     @Test 
@@ -201,6 +193,8 @@ public class Test2048 {
         Tile t = grid.getTile(1,3);
 
         // --- Assert
+        // Test without notnull 
+        //Assert.assertNotNull(tile);
         Assert.assertEquals(tile, t);
     }
     
@@ -218,6 +212,8 @@ public class Test2048 {
         grid.setTile(7,tile);
 
         // --- Assert
+        // Test without notnull 
+        //Assert.assertNotNull(tile);
         Assert.assertEquals(tile, grid.getTile(7));
     }
 
@@ -236,27 +232,7 @@ public class Test2048 {
 
         // --- Assert
         // Test without notnull 
-        //Assert.assertEquals(tileCol,col);
-        Assert.assertNotNull(col);
-    }
-    
-    @Test 
-    public void testTileNotEquals() {
-        // --- Initialize one tile grid 
-        Tile tile1 = new Tile(256);
-        Tile tile2 = new Tile(128);
-
-        // --- Assert
-        Assert.assertNotEquals(tile1, tile2);
-    }
-
-    @Test 
-    public void testTileEquals() {
-        // --- Initialize one tile grid 
-        Tile tile1 = new Tile(256);
-        Tile tile2 = new Tile(256);
-
-        // --- Assert
-        Assert.assertEquals(tile1, tile2);
+        //Assert.assertNotNull(tile);
+        Assert.assertArrayEquals(tileCol, col);
     }
 }
