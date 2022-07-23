@@ -1,1 +1,1 @@
-jdk-11.0.15.10-hotspot/lib/* filter=lfs diff=lfs merge=lfs -text
+jdk-11.0.15.10-hotspot/lib/** filter=lfs diff=lfs merge=lfs -text
