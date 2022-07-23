@@ -1,4 +1,4 @@
-rem @echo off
+@echo off
 rem *******Begin Comment**************
 rem JDK installation
 rem *******End Comment**************
