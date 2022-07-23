@@ -4,34 +4,31 @@ rem JDK installation
 rem *******End Comment**************
 setlocal
 cd /d %~dp0
-if exist jdk-11.0.15.10-hotspot\ (
-  goto SP2 
-) else (
-  goto SP1
-)
-:SP1
-Call :UnZipFile "%cd%" "%cd%\tools\jdk-11.0.15.10-hotspot.zip"
+@REM ==== START VALIDATION ====
+if not "%JAVA_HOME%" == "" goto OkJHome
 
-:UnZipFile <ExtractTo> <newzipfile>
-set vbs="%temp%\_.vbs"
-if exist %vbs% del /f /q %vbs%
->%vbs%  echo Set fso = CreateObject("Scripting.FileSystemObject")
->>%vbs% echo If NOT fso.FolderExists(%1) Then
->>%vbs% echo fso.CreateFolder(%1)
->>%vbs% echo End If
->>%vbs% echo set objShell = CreateObject("Shell.Application")
->>%vbs% echo set FilesInZip=objShell.NameSpace(%2).items
->>%vbs% echo objShell.NameSpace(%1).CopyHere(FilesInZip)
->>%vbs% echo Set fso = Nothing
->>%vbs% echo Set objShell = Nothing
-cscript //nologo %vbs%
-if exist %vbs% del /f /q %vbs%
+echo.
+echo Error: JAVA_HOME not found in your environment. >&2
+echo Please set the JAVA_HOME variable in your environment to match the >&2
+echo location of your Java installation. >&2
+echo.
+goto error
+
+:OkJHome
+
+if exist "%JAVA_HOME%\bin\java.exe" goto SP2
+
+echo.
+echo Error: JAVA_HOME is set to an invalid directory. >&2
+echo JAVA_HOME = "%JAVA_HOME%" >&2
+echo Please set the JAVA_HOME variable in your environment to match the >&2
+echo location of your Java installation. >&2
+echo.
+goto error
+
+@REM ==== END VALIDATION ====
 
 :SP2
-echo %JAVA_HOME%>javahome.txt
-set JAVA_HOME=%~dp0jdk-11.0.15.10-hotspot
-setx JAVA_HOME "%~dp0jdk-11.0.15.10-hotspot" /m
-
 rem *******Begin Comment**************
 rem Reneri Installation
 rem *******End Comment**************
@@ -51,36 +48,22 @@ rem Set Path environment for maven wrapper bin folder
 rem *******End Comment**************
 cd /d %~dp0
 echo %PATH% > oldpath.txt
-cd %UserProfile%\.m2\wrapper
-
-:treeProcess
-for %%f in (*.cmd) do (
-	if %%f == mvn.cmd (
-		setx PATH "%cd%;%PATH%" /m
-		goto SP3
-	)
-)
-for /D %%d in (*) do (
-    cd %%d
-    goto :treeProcess
-    cd ..
-)
-
+setx PATH "%cd%\apache-maven-3.6.0\bin;%PATH%" /m
 
 :SP3
 rem *******Begin Comment**************
 rem Install LASoT extension
 rem *******End Comment**************
 cd /d %~dp0
-cd tools
 call code --install-extension lasot-0.0.1.vsix
-cd.. 
-call code --install-extension vscjava.vscode-maven
+call code --install-extension vscjava.vscode-maven.vsix
 
 cd 2048 
 code .
 cd ..
- 
+
+:error
+
 pause
 
 exit/b
