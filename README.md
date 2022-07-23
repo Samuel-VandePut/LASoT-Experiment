@@ -10,7 +10,7 @@ In this GitHub repository, you will find in the [tarshes-descartes-reneri direct
 
 ## How to install it?
 - Install Visual Studio Code.
-- Install JDK 11 or 17 version.
+- Install JDK [11](https://adoptium.net/temurin/archive?version=11) or [17](https://adoptium.net/) version.
 - Download this repository and extract.
 - Execute install.bat file with admin rights.
 - Reboot your computer.
@@ -22,7 +22,9 @@ With the help off the LASoT plugin and the [usage indications](https://github.co
 
 > Tips : When you update the tests suites.  Run them before starting the procedure.
 
-When you have finished, thanks to fill in the [Google Form](https://docs.google.com/forms/d/e/1FAIpQLSfq9ZMw2bA00CK0hqz_ESFfbqTh4icy1YlXbLNdMPem2ewW5A/viewform?usp=sf_link)
+When you have finished execute the uninstall batch file. Then fill in the [Google Form](https://docs.google.com/forms/d/e/1FAIpQLSfq9ZMw2bA00CK0hqz_ESFfbqTh4icy1YlXbLNdMPem2ewW5A/viewform?usp=sf_link).  
+
+Thank you!
 
 ## Who is behind this project?
 
