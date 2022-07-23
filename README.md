@@ -6,10 +6,11 @@ LASoT, which stands for *Learning to assert in software testing using mutants*, 
 
 ## What will you find in this repository?
 
-In this GitHub repository, you will find in the [tarshes-descartes-reneri directory](./tarshes-descartes-reneri/) is a version of Reneri adapted by [Pierre Luycx](https://snail.info.unamur.be/author/pierre-luycx/).  You will also find [2048 directory](./2048) is an adapted version of the famous game 2048 and is the project on which we'll apply the [visual studio code lasot plugin](./tools/lasot-0.0.1.vsix).  There is also a [tools directory](./tools) which contains a java version and several batch files that will help you to install everything.
+In this GitHub repository, you will find in the [tarshes-descartes-reneri directory](./tarshes-descartes-reneri/) is a version of Reneri adapted by [Pierre Luycx](https://snail.info.unamur.be/author/pierre-luycx/).  You will also find [2048 directory](./2048) is an adapted version of the famous game 2048 and is the project on which we'll apply the [visual studio code lasot plugin](./tools/lasot-0.0.1.vsix).  There are also several batch files that will help you to install everything.
 
 ## How to install it?
 - Install Visual Studio Code.
+- Install JDK 11 or 17 version.
 - Download this repository and extract.
 - Execute install.bat file with admin rights.
 - Reboot your computer.
