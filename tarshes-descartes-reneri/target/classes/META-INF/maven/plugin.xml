@@ -435,7 +435,7 @@
       <groupId>fr.inria.gforge.spoon</groupId>
       <artifactId>spoon-core</artifactId>
       <type>jar</type>
-      <version>7.6.0</version>
+      <version>8.0.0</version>
     </dependency>
     <dependency>
       <groupId>org.eclipse.jdt</groupId>
