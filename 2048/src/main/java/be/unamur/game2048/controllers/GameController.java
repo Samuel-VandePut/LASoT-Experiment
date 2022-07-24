@@ -103,8 +103,8 @@ public class GameController {
      * CONSEIL : Ne perdez pas de temps à essayer de comprendre l'algorithme, faites plutôt du blackboxtesting ici.
      * Imaginez plutôt comment un mouvement dans une direction peut changer la grille.
      * 
-     * Les mouvements ne sont possibles que lorsque des cases sont vides ou lorsque des cases situées côte à côte 
-     * ont la même valeur.
+     * Les mouvements ne sont possibles que lorsque la direction choisie permet à au moins une tuile de se déplacer
+     * dans une case vide ou de se déplacer vers une tuile qui a la même valeur.  Dans ce cas les tuiles vont fusionner.
      *
      * @param checkingAvailableMoves spécifie si on vérifie simplement si le mouvement est possible ou si on doit l'exécuter.
      * @return Vrai lorsque le mouvement est possible, faux sinon.
