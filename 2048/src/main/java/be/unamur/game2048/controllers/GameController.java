@@ -102,6 +102,9 @@ public class GameController {
     /**
      * CONSEIL : Ne perdez pas de temps à essayer de comprendre l'algorithme, faites plutôt du blackboxtesting ici.
      * Imaginez plutôt comment un mouvement dans une direction peut changer la grille.
+     * 
+     * Les mouvements ne sont possibles que lorsque des cases sont vides ou lorsque des cases situées côte à côte 
+     * ont la même valeur.
      *
      * @param checkingAvailableMoves spécifie si on vérifie simplement si le mouvement est possible ou si on doit l'exécuter.
      * @return Vrai lorsque le mouvement est possible, faux sinon.
