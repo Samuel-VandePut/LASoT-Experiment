@@ -10,7 +10,7 @@ In this GitHub repository, you will find in the [tarshes-descartes-reneri direct
 
 ## How to install it?
 - Install Visual Studio Code.
-- Install JDK [11](https://adoptium.net/temurin/archive?version=11) or [17](https://adoptium.net/) version.
+- Install JDK [11](https://adoptium.net/temurin/archive?version=11) or [17](https://adoptium.net/).
 - Download this repository and extract.
 - Execute install.bat file with admin rights.
 - Reboot your computer.
