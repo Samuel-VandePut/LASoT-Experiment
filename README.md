@@ -22,7 +22,7 @@ With the help off the LASoT plugin and the [usage indications](https://github.co
 
 
 > Tips :
-> - Try first to use the Wizard and follow the steps. 
+> - Try first to use the Wizard (Ctrl+Shift+P and type LASoT Wizard) and follow the steps. 
 > - When you've change the tests suite, run it before starting the procedure.
 
 When you have finished execute createReports.bat file.  This will create the archive you'll need to upload in the experiment [Google Form](https://docs.google.com/forms/d/e/1FAIpQLSfq9ZMw2bA00CK0hqz_ESFfbqTh4icy1YlXbLNdMPem2ewW5A/viewform?usp=sf_link).  Thank you to take time to fill in properly.  At last execute the uninstall batch script.  
