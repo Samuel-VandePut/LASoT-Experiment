@@ -27,7 +27,7 @@ With the help off the LASoT plugin and the [usage indications](https://github.co
 > - Navigate to these methods and hover the highlighted code to know more about the tests that fails to detect mutations.
 > - Navigate to these tests and hover the highlighted code to know more about the mutation and original code values.
 > - Improve the tests assertions to kill the undetected mutations. When you've change the tests suite, run it before starting the procedure.
-> - Start again all the steps above until there are no more survivors.
+> - Start again all the steps above until there are no more survivors. It is not mandatory to use only the wizard.  You can use the "LASoT Explorer" too.
 
 When you have finished execute createReports.bat file.  This will create the archive you'll need to upload in the experiment [Google Form](https://docs.google.com/forms/d/e/1FAIpQLSfq9ZMw2bA00CK0hqz_ESFfbqTh4icy1YlXbLNdMPem2ewW5A/viewform?usp=sf_link).  Thank you to take time to fill in properly.  At last execute the uninstall batch script.  
 
