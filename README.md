@@ -23,10 +23,10 @@ With the help off the LASoT plugin and the [usage indications](https://github.co
 
 > Tips :
 > - Try first to use the Wizard (Ctrl+Shift+P and type LASoT Wizard) and follow the steps. 
-> - Then click on the status bar item.  A dialog will show you which methods are partially or pseudo-tested.
+> - Then click on the status bar item which indicates the number of survived mutations.  A dialog will show you which methods are partially or pseudo-tested.
 > - Navigate to these methods and hover the highlighted code to know more about the tests that fails to detect mutations.
 > - Navigate to these tests and hover the highlighted code to know more about the mutation and original code values.
-> - Improve the tests to kill the undetected mutations.
+> - Improve the tests assertions to kill the undetected mutations.
 > - When you've change the tests suite, run it before starting the procedure.
 
 When you have finished execute createReports.bat file.  This will create the archive you'll need to upload in the experiment [Google Form](https://docs.google.com/forms/d/e/1FAIpQLSfq9ZMw2bA00CK0hqz_ESFfbqTh4icy1YlXbLNdMPem2ewW5A/viewform?usp=sf_link).  Thank you to take time to fill in properly.  At last execute the uninstall batch script.  
