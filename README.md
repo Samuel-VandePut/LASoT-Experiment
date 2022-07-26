@@ -21,7 +21,7 @@ In this GitHub repository, you will find in the [tarshes-descartes-reneri direct
 With the help off the LASoT plugin and the [usage indications](https://github.com/SamuelVandePut/LASoT) try to improve the tests suite based on the informations incorporated into the code about the survived mutations.  
 
 
-> Tips :
+> Quick start :
 > - Try first to use the Wizard (Ctrl+Shift+P and type LASoT Wizard) and follow the steps. 
 > - Then click on the status bar item which indicates the number of survived mutations.  A dialog will show you which methods are partially or pseudo-tested.
 > - Navigate to these methods and hover the highlighted code to know more about the tests that fails to detect mutations.
