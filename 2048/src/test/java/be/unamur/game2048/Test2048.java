@@ -19,6 +19,7 @@ public class Test2048 {
 
     @Test
     public void testStartGameFirstTileNotNull(){
+        // --- Initialize game
         GameController controller = new GameController();
         controller.startGame();
         Grid grid = controller.getGrid();
@@ -28,6 +29,7 @@ public class Test2048 {
     
     @Test
     public void testStartGameNumberOfTileAddedEqualsNbStartTileFilledGameParam(){
+        // --- Initialize game 
         GameController controller = new GameController();
         controller.startGame();
         Grid grid = controller.getGrid();
@@ -40,6 +42,7 @@ public class Test2048 {
             }
         }
 
+        // --- Assert
         Assert.assertEquals(GameParams.nbStartTileFilled, count);//Peut essayer un assertTrue(count <= GameParams.nbStartTileFilled)
     }
     
@@ -74,7 +77,7 @@ public class Test2048 {
         // --- Start game
         controller.startGame(tiles);
 
-        // --- Assert controller cannot add more tile
+        // --- Assert no move available
         Assert.assertFalse(controller.moveUp(true) 
                         || controller.moveRight(true) 
                         || controller.moveDown(true) 
@@ -93,7 +96,7 @@ public class Test2048 {
         // --- Start game
         controller.startGame(tiles);
 
-        // --- Assert controller cannot add more tile
+        // --- Assert move available
         Assert.assertTrue(controller.moveUp(true) 
                         || controller.moveRight(true) 
                         || controller.moveDown(true) 
@@ -113,7 +116,7 @@ public class Test2048 {
         // --- Start game
         controller.startGame(tiles);
 
-        // --- Assert controller cannot add more tile
+        // --- Assert move available
         Assert.assertTrue(controller.moveUp(true) 
                         || controller.moveRight(true)
                         || controller.moveDown(true)
@@ -124,9 +127,11 @@ public class Test2048 {
 
     @Test 
     public void testCanMergeTileWithTwoSameTileValue() {
+        // --- Initialize
         Tile tile1 = new Tile(2);
         Tile tile2 = new Tile(2);
 
+        // --- Assert 
         Assert.assertTrue(tile1.canMergeWith(tile2));
     }
 
@@ -145,9 +150,11 @@ public class Test2048 {
 
     @Test 
     public void testMergeWithResultOnImpossibleMerging() {
+        // --- Initialize tiles
         Tile tile1 = new Tile(2);
         Tile tile2 = new Tile(4);
 
+        // --- Act
         int result = tile1.mergeWith(tile2);
         
         // --- Assert
