@@ -18,7 +18,7 @@ In this GitHub repository, you will find in the [tarshes-descartes-reneri direct
 
 ## What can I do now?
 
-With the help off the LASoT plugin and the [usage indications](https://github.com/SamuelVandePut/LASoT) try to improve the tests suite based on the informations incorporated into the code about the survived mutations.  
+With the help off the LASoT plugin and the [usage indications](https://github.com/SamuelVandePut/LASoT) try to improve the tests suite based on the informations incorporated into the code about the survived mutations.  This experiment consists also of a code reading exercice.  You have to understand at a general level what the tested method do.  These are implemented with commentaries.
 
 
 > Quick start :
